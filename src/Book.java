@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class Book {
     private String name;
-    private Author author[];
+    private Author[] authors;
     private double price;
     private int qty;
 
@@ -11,9 +11,9 @@ public class Book {
         setQty(0);
     }
 
-    public Book(String name, Author[] author, double price, int qty) {
+    public Book(String name, Author[] authors, double price, int qty) {
         setName(name);
-        setAuthor(author);
+        setAuthors(authors);
         setPrice(price);
         setQty(qty);
     }
@@ -26,12 +26,12 @@ public class Book {
         this.name = name;
     }
 
-    public Author[] getAuthor() {
-        return author;
+    public Author[] getAuthors() {
+        return authors;
     }
 
-    public void setAuthor(Author[] author) {
-        this.author = author;
+    public void setAuthors(Author[] authors) {
+        this.authors = authors;
     }
 
     public double getPrice() {
@@ -54,9 +54,19 @@ public class Book {
     public String toString() {
         return "Book[" +
                 "name='" + name + '\'' +
-                ",authors=" + Arrays.toString(author) +
+                ",authors=" + Arrays.toString(authors) +
                 ",price=" + price +
                 ",qty=" + qty +
                 ']';
+    }
+    public String getAuthorNames(){
+        String authorNames = "";
+        for (int i = 0; i < authors.length; i++) {
+            authorNames += authors[i].getName();
+            if(i< authors.length-1){
+                authorNames += ",";
+            }
+        }
+        return authorNames;
     }
 }

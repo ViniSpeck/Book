@@ -6,6 +6,7 @@ public class BookTest {
 
         Book databases = new Book("Sistema de Banco de Dados", authors, 109.99, 99);
         System.out.println(databases);
+        System.out.println(databases.getAuthorNames());
 
     }
 
